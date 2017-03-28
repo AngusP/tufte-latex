@@ -22,16 +22,17 @@
             \resizebox{30mm}{!}{\includeshield}%
             \vspace{3.5cm}%
             \fontsize{32}{0}\selectfont\par\noindent{\thanklesstitle}%
-            \vspace{1em}%
+            \vspace{0.75cm}%
             \fontsize{12}{16}\selectfont\par\noindent\allcaps{\thanklessauthor}%
-            \vspace{1em}%
+            \vspace{0.75cm}%
             \fontsize{12}{0}\selectfont\par\noindent\textit{\thesistext}%
-            \vspace{0.5em}%
+            \vspace{-0.5em}%
             \fontsize{10}{0}\selectfont\par\noindent\textit{\degreetext}%
             \vfill%
-            \fontsize{12}{16}\selectfont\par\noindent\allcaps{\infschool}%
-            \fontsize{11}{16}\selectfont\par\noindent\allcaps{\university}%
-            \fontsize{14}{16}\selectfont\par\noindent\the\year%
+            \fontsize{12}{0}\selectfont\par\noindent\allcaps{\infschool}%
+            \fontsize{11}{0}\selectfont\par\noindent\allcaps{\university}%
+            \vspace{0.75cm}%
+            \fontsize{24}{0}\selectfont\par\noindent\the\year%
             \par%
             \end{centering}%
         \end{fullwidth}%
@@ -74,11 +75,11 @@
 \newcommand{\degrees}{\raisebox{1.2ex}{\tiny\ensuremath{\circ}}\xspace}
 
 \newcommand{\pubfooter}{%
-  \vspace*{\fill}%
-  \smallcaps{\thesistext}%
+  \vspace*{\fill}\par%
+  \smallcaps{\thesistext}\par%
   \smallcaps{\degreetext}\\%
   \smallcaps{\infschool}\\%
-  \smallcaps{\thanklesspublisher}%
+  \smallcaps{\thanklesspublisher}\par%
   \textit{Copyright \copyright\ \the\year\ \thanklessauthor}%
 }
 
