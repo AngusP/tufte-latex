@@ -1,4 +1,4 @@
-\RequirePackage{eushield}
+\RequirePackage{eushield, xspace}
 
 \setlength{\parskip}{1em}%
 
@@ -73,6 +73,14 @@
 \newcommand{\cpright}{\raisebox{1ex}{\tiny\copyright}\xspace}
 \newcommand{\degrees}{\raisebox{1.2ex}{\tiny\ensuremath{\circ}}\xspace}
 
+\newcommand{\pubfooter}{%
+  \vspace*{\fill}%
+  \smallcaps{\thesistext}%
+  \smallcaps{\degreetext}\\%
+  \smallcaps{\infschool}\\%
+  \smallcaps{\thanklesspublisher}%
+  \textit{Copyright \copyright\ \the\year\ \thanklessauthor}%
+}
 
 %%
 % Table of Contents Depth
