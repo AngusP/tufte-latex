@@ -90,6 +90,13 @@
   \PassOptionsToClass{twoside}{\@tufte@class}
 }
 
+
+%%
+% `bindmargin` option
+
+\newboolean{@tufte@bindmargin}
+\DeclareOptionX[tufte]<common>{bindmargin}{\setboolean{@tufte@bindmargin}{true}}
+
 %%
 % `notoc' option -- suppresses the Tufte-style table of contents
 
@@ -457,6 +464,10 @@
   {}
   {\geometry{asymmetric}}% forces internal LaTeX `twoside'
 
+
+\ifthenelse{\boolean{@tufte@bindmargin}}
+  {\geometry{bindingoffset=50mm}}
+  {}
 
 %%
 % Separation marginpars by a line's worth of space.
@@ -906,6 +917,16 @@
     }%
   }%
 }
+
+
+
+%%
+% Abstract
+
+\newenvironment{abstract}
+  {\cleardoublepage{\LARGE\itshape Abstract}\par\if@tufte@sfsidenotes\begin{sffamily}\fi}
+  {\if@tufte@sfsidenotes\end{sffamily}\fi}
+
 
 
 %%
@@ -1613,7 +1634,7 @@
 \titleformat{\chapter}%
   [display]% shape
   {\relax\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\begin{fullwidth}}{}}% format applied to label+text
-  {\itshape\huge\thechapter}% label
+  {\itshape\Huge\thechapter}% label
   {0pt}% horizontal separation between label and title body
   {\huge\rmfamily\itshape}% before the title body
   [\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\end{fullwidth}}{}]% after the title body
@@ -1685,38 +1706,38 @@
 \ifthenelse{\boolean{@tufte@toc}}{%
   \titlecontents{part}% FIXME
     [0em] % distance from left margin
-    {\vspace{1.5\baselineskip}\begin{fullwidth}\LARGE\rmfamily\itshape} % above (global formatting of entry)
-    {\contentslabel{2em}} % before w/label (label = ``II'')
+    {\begin{fullwidth}\LARGE\rmfamily\sc} % above (global formatting of entry)
+    {\hspace*{0em}\contentslabel{2em}} % before w/label (label = ``II'')
     {} % before w/o label
-    {\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    {\hfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
   \titlecontents{chapter}%
     [0em] % distance from left margin
-    {\vspace{1.5\baselineskip}\begin{fullwidth}\LARGE\rmfamily\itshape} % above (global formatting of entry)
-    {\hspace*{0em}\contentslabel{2em}} % before w/label (label = ``2'')
-    {\hspace*{0em}} % before w/o label
-    {\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    {\begin{fullwidth}\LARGE\rmfamily\itshape} % above (global formatting of entry)
+    {\hspace*{3em}\contentslabel{2em}} % before w/label (label = ``2'')
+    {\hspace*{3em}} % before w/o label
+    {\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
   \titlecontents{section}% FIXME
     [0em] % distance from left margin
-    {\vspace{0\baselineskip}\begin{fullwidth}\Large\rmfamily\itshape} % above (global formatting of entry)
-    {\hspace*{2em}\contentslabel{2em}} % before w/label (label = ``2.6'')
-    {\hspace*{2em}} % before w/o label
-    {\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    {\begin{fullwidth}\Large\rmfamily\itshape} % above (global formatting of entry)
+    {\hspace*{5em}\contentslabel{2em}} % before w/label (label = ``2.6'')
+    {\hspace*{7em}} % before w/o label
+    {\hfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
   \titlecontents{subsection}% FIXME
     [0em] % distance from left margin
-    {\vspace{0\baselineskip}\begin{fullwidth}\large\rmfamily\itshape} % above (global formatting of entry)
-    {\hspace*{4em}\contentslabel{4em}} % before w/label (label = ``2.6.1'')
-    {\hspace*{4em}} % before w/o label
-    {\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    {\begin{fullwidth}\large\rmfamily\itshape} % above (global formatting of entry)
+    {\hspace*{8em}\contentslabel{3em}} % before w/label (label = ``2.6.1'')
+    {\hspace*{11em}} % before w/o label
+    {\hfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
   \titlecontents{paragraph}% FIXME
     [0em] % distance from left margin
-    {\vspace{0\baselineskip}\begin{fullwidth}\normalsize\rmfamily\itshape} % above (global formatting of entry)
-    {\hspace*{6em}\contentslabel{2em}} % before w/label (label = ``2.6.0.0.1'')
-    {\hspace*{6em}} % before w/o label
-    {\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    {\begin{fullwidth}\normalsize\rmfamily\itshape} % above (global formatting of entry)
+    {\hspace*{10em}\contentslabel{3em}} % before w/label (label = ``2.6.0.0.1'')
+    {\hspace*{13em}} % before w/o label
+    {\hfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
 }{}
 

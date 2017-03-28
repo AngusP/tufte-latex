@@ -1,0 +1,81 @@
+\RequirePackage{eushield}
+
+\setlength{\parskip}{1em}%
+
+%% Choose the monochrome crest for the front page (if crests used)
+\shieldtype{0}
+
+%% Default values for various fields
+\newcommand{\thesistext}{4th Year Project Report}
+\newcommand{\degreetext}{Artificial Intelligence and Computer Science}
+\newcommand{\infschool}{School of Informatics}
+\newcommand{\university}{University of Edinburgh}
+
+%%
+% Produces a full title page
+
+\renewcommand{\maketitlepage}[0]{%
+  \cleardoublepage%
+      {%
+        \begin{fullwidth}%
+          \begin{centering}%
+            \resizebox{30mm}{!}{\includeshield}%
+            \vspace{3.5cm}%
+            \fontsize{32}{0}\selectfont\par\noindent{\thanklesstitle}%
+            \vspace{1em}%
+            \fontsize{12}{16}\selectfont\par\noindent\allcaps{\thanklessauthor}%
+            \vspace{1em}%
+            \fontsize{12}{0}\selectfont\par\noindent\textit{\thesistext}%
+            \vspace{0.5em}%
+            \fontsize{10}{0}\selectfont\par\noindent\textit{\degreetext}%
+            \vfill%
+            \fontsize{12}{16}\selectfont\par\noindent\allcaps{\infschool}%
+            \fontsize{11}{16}\selectfont\par\noindent\allcaps{\university}%
+            \fontsize{14}{16}\selectfont\par\noindent\the\year%
+            \par%
+            \end{centering}%
+        \end{fullwidth}%
+      }
+      \thispagestyle{empty}%
+      \clearpage%
+}
+
+
+%%
+%% Let's have a dedication page so I can thank my mummy.
+%%
+
+\newcommand{\dedication}[1]
+   {\vspace*{\fill}
+    {\itshape\LARGE #1}
+    \vspace*{\fill}}
+
+
+%%
+%% Some commands which are generally useful...
+%%
+
+\newcommand{\NB}{N.B.\@\xspace}
+\newcommand{\eg}{e.g.\@\xspace}
+\newcommand{\Eg}{E.g.\@\xspace}
+\newcommand{\ie}{i.e.\@\xspace}
+\newcommand{\Ie}{I.e.\@\xspace}
+\newcommand{\etc}{etc.\@\xspace}
+\newcommand{\etal}{{\em et al}.\@\xspace}
+\newcommand{\etseq}{{\em et seq}.\@\xspace}
+\newcommand{\precis}{pr\'ecis\xspace}
+\newcommand{\Precis}{Pr\'ecis\xspace}
+\newcommand{\role}{r\^ole\xspace}
+\newcommand{\Role}{R\^ole\xspace}
+\newcommand{\naive}{na\"\i ve\xspace}
+\newcommand{\Naive}{Na\"\i ve\xspace}
+\newcommand{\tm}{\raisebox{1ex}{\tiny TM}\xspace}
+\newcommand{\cpright}{\raisebox{1ex}{\tiny\copyright}\xspace}
+\newcommand{\degrees}{\raisebox{1.2ex}{\tiny\ensuremath{\circ}}\xspace}
+
+
+%%
+% Table of Contents Depth
+\setcounter{tocdepth}{3}
+
+
