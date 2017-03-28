@@ -492,7 +492,7 @@
 %%
 % Turn off section numbering
 
-\setcounter{secnumdepth}{-1}
+% \setcounter{secnumdepth}{-1}
 
 %%
 % Tighten up space between displays (e.g., a figure or table) and make symmetric
@@ -1567,11 +1567,11 @@
     \let\@@author\@empty
     \let\@@date\@empty
     \ifthenelse{\boolean{@tufte@sfsidenotes}}{%
-      \gdef\@@title{\sffamily\LARGE\allcaps{\@title}\par}%
+      \gdef\@@title{\sffamily\Huge\allcaps{\@title}\par}%
       \gdef\@@author{\sffamily\Large\allcaps{\@author}\par}%
       \gdef\@@date{\sffamily\Large\allcaps{\@date}\par}%
     }{%
-      \gdef\@@title{\LARGE\itshape\@title\par}%
+      \gdef\@@title{\Huge\itshape\@title\par}%
       \gdef\@@author{\Large\itshape\@author\par}%
       \gdef\@@date{\Large\itshape\@date\par}%
     }%
@@ -1620,7 +1620,7 @@
 
 \titleformat{\section}%
   [hang]% shape
-  {\normalfont\Large\itshape}% format applied to label+text
+  {\normalfont\LARGE\itshape}% format applied to label+text
   {\thesection}% label
   {1em}% horizontal separation between label and title body
   {}% before the title body
@@ -1628,11 +1628,20 @@
 
 \titleformat{\subsection}%
   [hang]% shape
-  {\normalfont\large\itshape}% format applied to label+text
+  {\normalfont\Large\itshape}% format applied to label+text
   {\thesubsection}% label
   {1em}% horizontal separation between label and title body
   {}% before the title body
   []% after the title body
+
+\titleformat{\subsubsection}%
+  [hang]% shape
+  {\normalfont\large\itshape}% format applied to label+text
+  {\thesubsubsection}% label
+  {1em}% horizontal separation between label and title body
+  {}% before the title body
+  []% after the title body
+
 
 \titleformat{\paragraph}%
   [runin]% shape
@@ -1646,17 +1655,19 @@
 \titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus.2ex}
 
+
 % Subsubsection and following section headings shouldn't be used.
 % See Bringhurst's _The Elements of Typography_, section 4.2.2.
-\renewcommand\subsubsection{%
-  \@tufte@error{\string\subsubsection is undefined by this class.
-    See Robert Bringhurst's _The Elements of 
-    Typographic Style_, section 4.2.2.
-    \string\subsubsection was used}
-    {From Bringhurst's _The Elements of Typographic Style_, section 4.2.2: Use as 
-    many levels of headings as you need, no more and no fewer.  Also see the many 
-    related threads on Ask E.T. at http://www.edwardtufte.com/.}
-}
+% Or... Maybe they should be.
+%% \renewcommand\subsubsection{%
+%%   \@tufte@error{\string\subsubsection is undefined by this class.
+%%     See Robert Bringhurst's _The Elements of 
+%%     Typographic Style_, section 4.2.2.
+%%     \string\subsubsection was used}
+%%     {From Bringhurst's _The Elements of Typographic Style_, section 4.2.2: Use as 
+%%     many levels of headings as you need, no more and no fewer.  Also see the many 
+%%     related threads on Ask E.T. at http://www.edwardtufte.com/.}
+%% }
 
 \renewcommand\subparagraph{%
   \@tufte@error{\string\subparagraph is undefined by this class.%
