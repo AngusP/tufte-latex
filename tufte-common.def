@@ -470,9 +470,9 @@
   {}
 
 %%
-% Separation marginpars by a line's worth of space.
+% Separation marginpars
 
-\setlength\marginparpush{10pt}
+\setlength\marginparpush{1em}
 
 %%
 % Font for margin items
@@ -1470,9 +1470,9 @@
 % The 'fancy' page style is the default style for all pages.
 \fancyhf{} % clear header and footer fields
 \ifthenelse{\boolean{@tufte@twoside}}
-  {\fancyhead[LE]{\thepage\quad\smallcaps{\newlinetospace{\plainauthor}}}%
-    \fancyhead[RO]{\smallcaps{\newlinetospace{\plaintitle}}\quad\thepage}}
-  {\fancyhead[RE,RO]{\smallcaps{\newlinetospace{\plaintitle}}\quad\thepage}}
+           {\fancyhead[LE]{\thepage\quad\smallcaps{\newlinetospace{\plaintitle}}}%
+             \fancyhead[RO]{\smallcaps{\newlinetospace{\plaintitle}}\quad\thepage}}%
+           {\fancyhead[RE,RO]{\smallcaps{\newlinetospace{\plaintitle}}\quad\thepage}}
 
 
 % The `plain' page style is used on chapter opening pages.
@@ -1482,9 +1482,10 @@
   \fancyhf{} % clear header and footer fields
   % Uncomment the following five lines of code if you want the opening page
   % of the chapter to express the folio in the lower outside corner.
-  %\ifthenelse{\boolean{@tufte@twoside}}
-  %  {\fancyfoot[LE,RO]{\thepage}}
-  %  {\fancyfoot[RE,RO]{\thepage}}
+  \ifthenelse{\boolean{@tufte@twoside}}
+             {\fancyhead[LE]{\thepage}%
+               \fancyhead[RO]{\thepage}}%
+             {\fancyhead[RE,RO]{\thepage}}
 }
 
 % The `empty' page style suppresses all headers and footers.
@@ -1611,11 +1612,10 @@
 % without headers and footers
 \def\cleardoublepage{\clearpage\if@twoside\ifodd\c@page\else
   \hbox{}
-  %\vspace*{\fill}
-  %\begin{center}
-  %  This page intentionally contains only this sentence.
-  %\end{center}
-  %\vspace{\fill}
+  \vspace*{\fill}
+  %\noindent\textcolor{Gray}%
+  %{\itshape This page is intentionally blank}
+  %{\huge ...}
   \thispagestyle{empty}
   \newpage
   \if@twocolumn\hbox{}\newpage\fi\fi\fi}
@@ -1715,14 +1715,14 @@
     {\begin{fullwidth}\Large\rmfamily\itshape} % above (global formatting of entry)
     {\hspace*{5em}\contentslabel{2em}} % before w/label (label = ``2.6'')
     {\hspace*{7em}} % before w/o label
-    {\hfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    {\qquad\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
   \titlecontents{subsection}% FIXME
     [0em] % distance from left margin
     {\begin{fullwidth}\large\rmfamily\itshape} % above (global formatting of entry)
     {\hspace*{8em}\contentslabel{3em}} % before w/label (label = ``2.6.1'')
     {\hspace*{11em}} % before w/o label
-    {\hfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    {\qquad\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
   \titlecontents{paragraph}% FIXME
     [0em] % distance from left margin
