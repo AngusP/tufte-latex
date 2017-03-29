@@ -71,6 +71,14 @@
   \@mainmatterfalse%
 }
 
+
+%%
+% Abstract
+
+\newenvironment{abstract}
+  {\cleardoublepage{\LARGE\itshape\noindent Abstract}\par\if@tufte@sfsidenotes\begin{sffamily}\fi}
+  {\if@tufte@sfsidenotes\end{sffamily}\fi}
+
 %%
 % Only show the chapter titles in the table of contents
 \setcounter{tocdepth}{0}

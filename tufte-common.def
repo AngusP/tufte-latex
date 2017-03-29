@@ -920,14 +920,6 @@
 
 
 
-%%
-% Abstract
-
-\newenvironment{abstract}
-  {\cleardoublepage{\LARGE\itshape\noindent Abstract}\par\if@tufte@sfsidenotes\begin{sffamily}\fi}
-  {\if@tufte@sfsidenotes\end{sffamily}\fi}
-
-
 
 %%
 % Macros for holding the list of cite keys until after the \sidenote
