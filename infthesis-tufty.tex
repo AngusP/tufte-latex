@@ -20,7 +20,7 @@
         \begin{fullwidth}%
           \begin{centering}%
             \resizebox{30mm}{!}{\includeshield}%
-            \vspace{2.2cm}%
+            \vspace{2.5cm}%
             \fontsize{32pt}{35pt}%
             \selectfont\par\noindent{\thanklesstitle}\par%
             \vspace{0.75cm}%
@@ -92,6 +92,11 @@
 
 %%
 % Table of Contents Depth
-\setcounter{tocdepth}{3}
+\setcounter{tocdepth}{4}
 
 
+%%
+% Definition List
+
+\newcommand{\deflisthead}[1]{\noindent\textit{#1}\par}
+\newcommand{\deflistitem}[1]{\noindent\begin{quote}#1\end{quote}\par}
