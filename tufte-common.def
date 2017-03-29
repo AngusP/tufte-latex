@@ -1709,14 +1709,14 @@
     {\begin{fullwidth}\LARGE\rmfamily\sc} % above (global formatting of entry)
     {\hspace*{0em}\contentslabel{2em}} % before w/label (label = ``II'')
     {} % before w/o label
-    {\hfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    {\qquad\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
   \titlecontents{chapter}%
     [0em] % distance from left margin
     {\begin{fullwidth}\LARGE\rmfamily\itshape} % above (global formatting of entry)
     {\hspace*{3em}\contentslabel{2em}} % before w/label (label = ``2'')
     {\hspace*{3em}} % before w/o label
-    {\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    {\qquad\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
   \titlecontents{section}% FIXME
     [0em] % distance from left margin
