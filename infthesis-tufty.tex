@@ -22,7 +22,7 @@
             \resizebox{30mm}{!}{\includeshield}%
             \vspace{2.5cm}%
             \fontsize{32pt}{35pt}%
-            \selectfont\par\noindent{\thanklesstitle}\par%
+            \selectfont\par\noindent{\sc\thanklesstitle}\par%
             \vspace{0.75cm}%
             \fontsize{12}{15}%
             \selectfont\par\noindent\allcaps{\thanklessauthor}%
@@ -54,7 +54,7 @@
 %%
 
 \newcommand{\dedication}[1]
-   {\vspace*{\fill}
+   {\clearpage\vspace*{\fill}
     {\itshape\LARGE #1}
     \vspace*{\fill}}
 
@@ -80,7 +80,7 @@
 \newcommand{\tm}{\raisebox{1ex}{\tiny TM}\xspace}
 \newcommand{\cpright}{\raisebox{1ex}{\tiny\copyright}\xspace}
 \newcommand{\degrees}{\raisebox{1.2ex}{\tiny\ensuremath{\circ}}\xspace}
-\newcommand{\ch}{ch.\@\xspace}
+\newcommand{\ch}{{\sc Ch.}}
 
 \newcommand{\pubfooter}{%
   \vspace*{\fill}\par%
