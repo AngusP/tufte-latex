@@ -1693,7 +1693,7 @@
 }
 
 
-% Formatting for main TOC (printed in front matter)
+% Formatting for main Table of Contents (TOC) (printed in front matter)
 % {section} [left] {above} {before w/label} {before w/o label} {filler + page} [after]
 \ifthenelse{\boolean{@tufte@toc}}{%
   \titlecontents{part}% FIXME
@@ -1720,8 +1720,15 @@
   \titlecontents{subsection}% FIXME
     [0em] % distance from left margin
     {\begin{fullwidth}\large\rmfamily\itshape} % above (global formatting of entry)
-    {\hspace*{8em}\contentslabel{2em}} % before w/label (label = ``2.6.1'')
+    {\hspace*{8em}\contentslabel{2.5pc}} % before w/label (label = ``2.6.1'')
     {\hspace*{11em}} % before w/o label
+    {\Large\qquad\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    [\end{fullwidth}] % after
+  \titlecontents{subsubsection}% FIXME
+    [0em] % distance from left margin
+    {\begin{fullwidth}\normalsize\rmfamily\itshape} % above (global formatting of entry)
+    {\hspace*{9em}\contentslabel{3pc}} % before w/label (label = ``2.6.0.0.1'')
+    {\hspace*{10em}} % before w/o label
     {\Large\qquad\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
   \titlecontents{paragraph}% FIXME
