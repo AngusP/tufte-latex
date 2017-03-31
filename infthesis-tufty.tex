@@ -1,6 +1,6 @@
 \RequirePackage{eushield, xspace}
 
-\setlength{\parskip}{1em}%
+\setlength{\parskip}{0.5\baselineskip}%
 
 %% Choose the monochrome crest for the front page (if crests used)
 \shieldtype{0}
@@ -82,13 +82,24 @@
 \newcommand{\degrees}{\raisebox{1.2ex}{\tiny\ensuremath{\circ}}\xspace}
 \newcommand{\ch}{{\sc Ch.}}
 
-\newcommand{\pubfooter}{%
-  \vspace*{\fill}\par%
+
+\newenvironment{publicationmeta}{%
+  \cleardoublepage%
+  \thispagestyle{plain}%
+  \setlength{\parindent}{0pt}%
+}{%
+  \par\vspace*{\fill}\par%
   \smallcaps{\thesistext}\par%
   \smallcaps{\degreetext}\\%
   \smallcaps{\infschool}\\%
   \smallcaps{\thanklesspublisher}\par%
-  \textit{Copyright \copyright\ \the\year\ \thanklessauthor}%
+  \vspace{2\baselineskip}%
+  \textit{Copyright \copyright\ \the\year\ \thanklessauthor}\par%
+  \textit{%
+    This \LaTeX\ document class is derived from the `Tufte-\LaTeX' document class and is licensed
+    under the \href{https://www.apache.org/licenses/LICENSE-2.0}{Apache 2.0 license.}%
+  }\par%
+  \smallcaps{\href{https://github.com/AngusP/tufte-latex}{https://github.com/AngusP/tufte-latex}}%
 }
 
 %%

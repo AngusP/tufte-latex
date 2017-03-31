@@ -1699,37 +1699,37 @@
   \titlecontents{part}% FIXME
     [0em] % distance from left margin
     {\begin{fullwidth}\LARGE\rmfamily\sc} % above (global formatting of entry)
-    {\hspace*{0em}\contentslabel{2em}} % before w/label (label = ``II'')
+    {\hspace*{0em}\contentslabel{2pc}} % before w/label (label = ``II'')
     {} % before w/o label
-    {\qquad\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    {\Large\qquad\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
   \titlecontents{chapter}%
     [0em] % distance from left margin
     {\begin{fullwidth}\LARGE\rmfamily\itshape} % above (global formatting of entry)
-    {\hspace*{3em}\contentslabel{2em}} % before w/label (label = ``2'')
+    {\hspace*{3em}\contentslabel{2pc}} % before w/label (label = ``2'')
     {\hspace*{3em}} % before w/o label
-    {\qquad\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    {\Large\qquad\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
   \titlecontents{section}% FIXME
     [0em] % distance from left margin
     {\begin{fullwidth}\Large\rmfamily\itshape} % above (global formatting of entry)
-    {\hspace*{5em}\contentslabel{2em}} % before w/label (label = ``2.6'')
+    {\hspace*{5em}\contentslabel{2pc}} % before w/label (label = ``2.6'')
     {\hspace*{7em}} % before w/o label
-    {\qquad\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    {\Large\qquad\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
   \titlecontents{subsection}% FIXME
     [0em] % distance from left margin
     {\begin{fullwidth}\large\rmfamily\itshape} % above (global formatting of entry)
-    {\hspace*{8em}\contentslabel{3em}} % before w/label (label = ``2.6.1'')
+    {\hspace*{8em}\contentslabel{2em}} % before w/label (label = ``2.6.1'')
     {\hspace*{11em}} % before w/o label
-    {\qquad\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    {\Large\qquad\dotfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
   \titlecontents{paragraph}% FIXME
     [0em] % distance from left margin
     {\begin{fullwidth}\normalsize\rmfamily\itshape} % above (global formatting of entry)
     {\hspace*{10em}\contentslabel{3em}} % before w/label (label = ``2.6.0.0.1'')
     {\hspace*{13em}} % before w/o label
-    {\hfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
+    {\Large\hfill\rmfamily\upshape\qquad\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
 }{}
 
